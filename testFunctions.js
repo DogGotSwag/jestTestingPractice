@@ -1,14 +1,13 @@
-function capitalize() {
+function capitalize(string = "") {
+  if (string == "") return "";
+  return `${string[0].toUpperCase()}${string.slice(1)}`;
 }
 
-function reverseString(){
-}
+function reverseString() {}
 
-let calculator = {}
+let calculator = {};
 
-function caesarCipher(){
-}
+function caesarCipher() {}
 
-function analyzeArray(){
-}
-export {capitalize, reverseString, calculator, caesarCipher, analyzeArray};
+function analyzeArray() {}
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

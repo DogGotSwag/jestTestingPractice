@@ -3,9 +3,16 @@ function capitalize(string = "") {
   return `${string[0].toUpperCase()}${string.slice(1)}`;
 }
 
-function reverseString() {}
+function reverseString(string = "") {
+    return string.split('').reverse().join('');
+}
 
-let calculator = {};
+let calculator = {
+  add: (num, numTwo) => num + numTwo, 
+  subtract: (num, numTwo) => num - numTwo, 
+  multiply: (num, numTwo) => num * numTwo,
+  divide: (num, numTwo) => num/numTwo,
+};
 
 function caesarCipher() {}
 

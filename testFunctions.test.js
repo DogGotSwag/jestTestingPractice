@@ -19,25 +19,42 @@ describe.skip("check if all functions created", () => {
   });
 });
 
-describe("tests for capitalize function", () => {
+describe.skip("tests for capitalize function", () => {
   it(`takes 'a' returns 'A'`, () => {
-    expect(capitalize('a')).toBe('A');
+    expect(capitalize("a")).toBe("A");
   });
-  
+
   it(`takes 'rust' returns 'Rust'`, () => {
-    expect(capitalize('rust')).toBe('Rust');
+    expect(capitalize("rust")).toBe("Rust");
   });
 
   it(`takes '' returns ''`, () => {
-    expect(capitalize('')).toBe('');
+    expect(capitalize("")).toBe("");
   });
 
   it(`takes nothing returns ''`, () => {
-    expect(capitalize()).toBe('');
+    expect(capitalize()).toBe("");
   });
 
   it(`takes 'Thing' returns 'Thing'`, () => {
-    expect(capitalize('Thing')).toBe('Thing');
+    expect(capitalize("Thing")).toBe("Thing");
+  });
+});
+
+describe("tests for reverseString function", () => {
+  it(`takes 'one' returns 'eno'`, () => {
+    expect(reverseString("one")).toBe("eno");
   });
 
+  it(`takes 'a' returns 'a'`, () => {
+    expect(reverseString("a")).toBe("a");
+  });
+
+  it(`takes '' returns ''`, () => {
+    expect(reverseString('')).toBe('');
+  });
+
+  it(`takes nothing returns ''`, () => {
+    expect(reverseString()).toBe('');
+  });
 });

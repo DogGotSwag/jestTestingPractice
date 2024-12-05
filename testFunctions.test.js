@@ -28,4 +28,16 @@ describe("tests for capitalize function", () => {
     expect(capitalize('rust')).toBe('Rust');
   });
 
+  it(`takes '' returns ''`, () => {
+    expect(capitalize('')).toBe('');
+  });
+
+  it(`takes nothing returns ''`, () => {
+    expect(capitalize()).toBe('');
+  });
+
+  it(`takes 'Thing' returns 'Thing'`, () => {
+    expect(capitalize('Thing')).toBe('Thing');
+  });
+
 });

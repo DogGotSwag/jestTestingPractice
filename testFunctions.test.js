@@ -41,7 +41,7 @@ describe.skip("tests for capitalize function", () => {
   });
 });
 
-describe("tests for reverseString function", () => {
+describe.skip("tests for reverseString function", () => {
   it(`takes 'one' returns 'eno'`, () => {
     expect(reverseString("one")).toBe("eno");
   });
@@ -57,4 +57,39 @@ describe("tests for reverseString function", () => {
   it(`takes nothing returns ''`, () => {
     expect(reverseString()).toBe('');
   });
+});
+
+describe('tests for calculator object', () =>{
+    it(`adds 400 + 20`, () => {
+        expect(calculator.add(400,20)).toBe(420);
+    });
+
+    it(`adds negative numbers `, () => {
+        expect(calculator.add(-400,-20)).toBe(-420);
+    });
+
+    it(`adds floats`, () => {
+        expect(calculator.add(.1,.2)).toBeCloseTo(.3);
+    });
+
+    it(`subtracts 440 & 20`, () => {
+        expect(calculator.subtract(440,20)).toBe(420);
+    });
+
+    it(`subtracts negative numbers`, () => {
+        expect(calculator.subtract(-440,-20)).toBe(-420);
+    });
+
+    it(`subtracts floats`, () => {
+        expect(calculator.subtract(-.1,-.2)).toBeCloseTo(.1);
+    });
+
+    it(`divides`, () => {
+        expect(calculator.divide(2,2)).toBe(1);
+    });
+
+    it(`multiplies`, () => {
+        expect(calculator.multiply(4,4)).toBe(16);
+    });
+
 });

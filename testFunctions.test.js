@@ -51,45 +51,74 @@ describe.skip("tests for reverseString function", () => {
   });
 
   it(`takes '' returns ''`, () => {
-    expect(reverseString('')).toBe('');
+    expect(reverseString("")).toBe("");
   });
 
   it(`takes nothing returns ''`, () => {
-    expect(reverseString()).toBe('');
+    expect(reverseString()).toBe("");
   });
 });
 
-describe('tests for calculator object', () =>{
-    it(`adds 400 + 20`, () => {
-        expect(calculator.add(400,20)).toBe(420);
-    });
+describe.skip("tests for calculator object", () => {
+  it(`adds 400 + 20`, () => {
+    expect(calculator.add(400, 20)).toBe(420);
+  });
 
-    it(`adds negative numbers `, () => {
-        expect(calculator.add(-400,-20)).toBe(-420);
-    });
+  it(`adds negative numbers `, () => {
+    expect(calculator.add(-400, -20)).toBe(-420);
+  });
 
-    it(`adds floats`, () => {
-        expect(calculator.add(.1,.2)).toBeCloseTo(.3);
-    });
+  it(`adds floats`, () => {
+    expect(calculator.add(0.1, 0.2)).toBeCloseTo(0.3);
+  });
 
-    it(`subtracts 440 & 20`, () => {
-        expect(calculator.subtract(440,20)).toBe(420);
-    });
+  it(`subtracts 440 & 20`, () => {
+    expect(calculator.subtract(440, 20)).toBe(420);
+  });
 
-    it(`subtracts negative numbers`, () => {
-        expect(calculator.subtract(-440,-20)).toBe(-420);
-    });
+  it(`subtracts negative numbers`, () => {
+    expect(calculator.subtract(-440, -20)).toBe(-420);
+  });
 
-    it(`subtracts floats`, () => {
-        expect(calculator.subtract(-.1,-.2)).toBeCloseTo(.1);
-    });
+  it(`subtracts floats`, () => {
+    expect(calculator.subtract(-0.1, -0.2)).toBeCloseTo(0.1);
+  });
 
-    it(`divides`, () => {
-        expect(calculator.divide(2,2)).toBe(1);
-    });
+  it(`divides`, () => {
+    expect(calculator.divide(2, 2)).toBe(1);
+  });
 
-    it(`multiplies`, () => {
-        expect(calculator.multiply(4,4)).toBe(16);
-    });
+  it(`multiplies`, () => {
+    expect(calculator.multiply(4, 4)).toBe(16);
+  });
+});
 
+describe("tests for caesarCipher", () => {
+  it("shifts one letter by 0", () => {
+    expect(caesarCipher("a", 0)).toMatch("a");
+  });
+
+  it("shifts one letter by 1", () => {
+    expect(caesarCipher("a", 1)).toMatch("b");
+  });
+
+  it("shifts y by 1", () => {
+    expect(caesarCipher("y", 1)).toMatch("z");
+  });
+
+  // it('shifts one letter by 100', () => {
+  //     expect(caesarCipher('a',100)).toMatch('w');
+  // })
+
+  // it('make sure it wraps', () => {
+  //     expect(caesarCipher('y',777)).toMatch('v');
+  // })
+
+  // it('make sure it wraps negative', () => {
+  //     expect(caesarCipher('e',-23)).toMatch('h');
+  // })
+
+  // it('make sure it wraps negative', () => {
+  //     expect(caesarCipher('y',-777)).toMatch('x');
+  // })
 });

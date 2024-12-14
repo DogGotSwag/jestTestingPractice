@@ -141,11 +141,15 @@ describe("tests for caesarCipher", () => {
     expect(caesarCipher("a", -47)).toMatch("f");
   });
 
-  it('make sure it wraps negative', () => {
-      expect(caesarCipher('y',-34)).toMatch('q');
-  })
+  it("make sure it wraps negative", () => {
+    expect(caesarCipher("y", -34)).toMatch("q");
+  });
 
-  it('works for multiple letters', () =>{
-    expect(caesarCipher('xyz', 3)).toMatch('abc');
+  it("works for multiple letters", () => {
+    expect(caesarCipher("xyz", 3)).toMatch("abc");
+  });
+
+  it("test for case preservation", () => {
+    expect(caesarCipher("HeLLo", 3)).toMatch("KhOOr");
   });
 });

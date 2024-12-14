@@ -48,7 +48,7 @@ function caesarCipher(string, key) {
     currentIndex = currentIndex + (key % 26);
     if (currentIndex > 25) currentIndex -= 26;
   } else if (currentIndex + key < 0) {
-    if (currentIndex + key < -25) key = (currentIndex + key) % 26;q
+    if (currentIndex + key < -25) key = (currentIndex + key) % 26;
     return alphabet[currentIndex + (26 + key)];
   } else {
     currentIndex += key;

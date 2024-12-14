@@ -42,15 +42,19 @@ let alphabet = [
   "z",
 ];
 function caesarCipher(string, key) {
-  let currentIndex = alphabet.indexOf(string);
-  let largeNewIndex = currentIndex + key;
-  let finalNewIndex;
-  if (largeNewIndex > 25 || largeNewIndex < 0) {
-    finalNewIndex = currentIndex + (key % 26);
-    if (finalNewIndex > 25) finalNewIndex -= 26;
-    if (finalNewIndex < 0) finalNewIndex += 26;
-    return alphabet[finalNewIndex];
-  } else return alphabet[largeNewIndex];
+  let word = '';
+  for (let i = 0; i < string.length; i++) {
+    let currentIndex = alphabet.indexOf(string[i]);
+    let largeNewIndex = currentIndex + key;
+    let finalNewIndex;
+    if (largeNewIndex > 25 || largeNewIndex < 0) {
+      finalNewIndex = currentIndex + (key % 26);
+      if (finalNewIndex > 25) finalNewIndex -= 26;
+      if (finalNewIndex < 0) finalNewIndex += 26;
+      word += alphabet[finalNewIndex];
+    } else word += alphabet[largeNewIndex];
+  }
+  return word;
 }
 
 // console.log(caesarCipher("a", -46));

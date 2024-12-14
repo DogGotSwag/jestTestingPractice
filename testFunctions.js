@@ -45,11 +45,15 @@ function caesarCipher(string, key) {
   let currentIndex = alphabet.indexOf(string);
 
   if (currentIndex + key > 25) {
+    currentIndex = currentIndex + (key % 26);
+    if (currentIndex > 25) currentIndex -= 26;
   } else {
     currentIndex += key;
   }
   return alphabet[currentIndex];
 }
+
+console.log(caesarCipher("f", 100));
 
 function analyzeArray() {}
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

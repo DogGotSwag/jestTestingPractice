@@ -43,20 +43,17 @@ let alphabet = [
 ];
 function caesarCipher(string, key) {
   let currentIndex = alphabet.indexOf(string);
-
-  if (currentIndex + key > 25) {
-    currentIndex = currentIndex + (key % 26);
-    if (currentIndex > 25) currentIndex -= 26;
-  } else if (currentIndex + key < 0) {
-    if (currentIndex + key < -25) key = (currentIndex + key) % 26;
-    return alphabet[currentIndex + (26 + key)];
-  } else {
-    currentIndex += key;
-  }
-  return alphabet[currentIndex];
+  let largeNewIndex = currentIndex + key;
+  let finalNewIndex;
+  if (largeNewIndex > 25 || largeNewIndex < 0) {
+    finalNewIndex = currentIndex + (key % 26);
+    if (finalNewIndex > 25) finalNewIndex -= 26;
+    if (finalNewIndex < 0) finalNewIndex += 26;
+    return alphabet[finalNewIndex];
+  } else return alphabet[largeNewIndex];
 }
 
-console.log(caesarCipher("a", -46));
+// console.log(caesarCipher("a", -46));
 
 function analyzeArray() {}
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

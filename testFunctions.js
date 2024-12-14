@@ -47,13 +47,16 @@ function caesarCipher(string, key) {
   if (currentIndex + key > 25) {
     currentIndex = currentIndex + (key % 26);
     if (currentIndex > 25) currentIndex -= 26;
-  } else {
+  } 
+  else if((currentIndex + key) < 0){    
+    return alphabet[ currentIndex + (26+key)];
+  }else {
     currentIndex += key;
   }
   return alphabet[currentIndex];
 }
 
-console.log(caesarCipher("f", 100));
+console.log(caesarCipher("a", -23));
 
 function analyzeArray() {}
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

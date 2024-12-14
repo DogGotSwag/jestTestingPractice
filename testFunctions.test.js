@@ -144,4 +144,8 @@ describe("tests for caesarCipher", () => {
   it('make sure it wraps negative', () => {
       expect(caesarCipher('y',-34)).toMatch('q');
   })
+
+  it('works for multiple letters', () =>{
+    expect(caesarCipher('xyz', 3)).toMatch('abc');
+  });
 });

@@ -108,25 +108,35 @@ describe("tests for caesarCipher", () => {
   it("shifts q by 6", () => {
     expect(caesarCipher("q", 6)).toMatch("w");
   });
-  it('shifts a letter by 100', () => {
-    expect(caesarCipher('a',100)).toMatch('w');
-})
+  it("shifts a letter by 100", () => {
+    expect(caesarCipher("a", 100)).toMatch("w");
+  });
 
-  it('shifts f letter by 100', () => {
-      expect(caesarCipher('f',100)).toMatch('b');
-  })
+  it("shifts f letter by 100", () => {
+    expect(caesarCipher("f", 100)).toMatch("b");
+  });
 
-  it('shifts g letter by 123', () => {
-      expect(caesarCipher('g',123)).toMatch('z');
-  })
+  it("shifts g letter by 123", () => {
+    expect(caesarCipher("g", 123)).toMatch("z");
+  });
 
-  it('make sure it wraps', () => {
-      expect(caesarCipher('y',777)).toMatch('v');
-  })
+  it("make sure it wraps", () => {
+    expect(caesarCipher("y", 777)).toMatch("v");
+  });
 
-  // it('make sure it wraps negative', () => {
-  //     expect(caesarCipher('e',-23)).toMatch('h');
-  // })
+  it("make 'a' wrap negative", () => {
+    expect(caesarCipher("a", -23)).toMatch("d");
+  });
+
+  it("make'a' wrap negative", () => {
+    expect(caesarCipher("a", -18)).toMatch("i");
+  });
+  it("make sure it e negative", () => {
+    expect(caesarCipher("e", -23)).toMatch("h");
+  });
+  it("make sure it e negative", () => {
+    expect(caesarCipher("t", -13)).toMatch("gq");
+  });
 
   // it('make sure it wraps negative', () => {
   //     expect(caesarCipher('y',-777)).toMatch('x');

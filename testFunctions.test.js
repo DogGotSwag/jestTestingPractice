@@ -135,10 +135,13 @@ describe("tests for caesarCipher", () => {
     expect(caesarCipher("e", -23)).toMatch("h");
   });
   it("make sure it e negative", () => {
-    expect(caesarCipher("t", -13)).toMatch("gq");
+    expect(caesarCipher("t", -13)).toMatch("g");
+  });
+  it("make sure it 'a' with large negative key", () => {
+    expect(caesarCipher("a", -47)).toMatch("f");
   });
 
-  // it('make sure it wraps negative', () => {
-  //     expect(caesarCipher('y',-777)).toMatch('x');
-  // })
+  it('make sure it wraps negative', () => {
+      expect(caesarCipher('y',-34)).toMatch('q');
+  })
 });

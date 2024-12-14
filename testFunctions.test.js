@@ -105,14 +105,24 @@ describe("tests for caesarCipher", () => {
   it("shifts y by 1", () => {
     expect(caesarCipher("y", 1)).toMatch("z");
   });
+  it("shifts q by 6", () => {
+    expect(caesarCipher("q", 6)).toMatch("w");
+  });
+  it('shifts a letter by 100', () => {
+    expect(caesarCipher('a',100)).toMatch('w');
+})
 
-  // it('shifts one letter by 100', () => {
-  //     expect(caesarCipher('a',100)).toMatch('w');
-  // })
+  it('shifts f letter by 100', () => {
+      expect(caesarCipher('f',100)).toMatch('b');
+  })
 
-  // it('make sure it wraps', () => {
-  //     expect(caesarCipher('y',777)).toMatch('v');
-  // })
+  it('shifts g letter by 123', () => {
+      expect(caesarCipher('g',123)).toMatch('z');
+  })
+
+  it('make sure it wraps', () => {
+      expect(caesarCipher('y',777)).toMatch('v');
+  })
 
   // it('make sure it wraps negative', () => {
   //     expect(caesarCipher('e',-23)).toMatch('h');

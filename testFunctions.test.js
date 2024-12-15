@@ -152,4 +152,8 @@ describe("tests for caesarCipher", () => {
   it("test for case preservation", () => {
     expect(caesarCipher("HeLLo", 3)).toMatch("KhOOr");
   });
+
+  it("test if all non-alphabetical chars remain the same", () => {
+    expect(caesarCipher("Hello, World!", 3)).toMatch("Khoor, Zruog!");
+  });
 });

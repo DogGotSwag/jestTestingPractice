@@ -160,23 +160,33 @@ describe.skip("tests for caesarCipher", () => {
 
 describe("tests for analyzeArray", () => {
   it("test for empty array, and no input", () => {
-    let array = []
+    let array = [];
     expect(analyzeArray()).toStrictEqual({});
     expect(analyzeArray(array)).toStrictEqual({});
   });
-  
+
   it("find smallest", () => {
-    let array = [1, 8, 21, 4]
-    expect(analyzeArray(array)['min']).toBe(1);
+    let array = [1, 8, 21, 4];
+    expect(analyzeArray(array)["min"]).toBe(1);
   });
 
   it("find smallest", () => {
-    let array = [6, 31, 5, 9]
-    expect(analyzeArray(array)['min']).toBe(5);
+    let array = [6, 31, 5, 9];
+    expect(analyzeArray(array)["min"]).toBe(5);
   });
 
   it("find smallest", () => {
-    let array = [1,8,3,4,2,6]
-    expect(analyzeArray(array)['min']).toBe(1);
+    let array = [1, 8, 3, 4, 2, 6];
+    expect(analyzeArray(array)["min"]).toBe(1);
+  });
+
+  it("find max", () => {
+    let array = [40, 38, 72, 83];
+    expect(analyzeArray(array)["max"]).toBe(83);
+  });
+
+  it("find max", () => {
+    let array = [99, 1000, 3, 67];
+    expect(analyzeArray(array)["max"]).toBe(1000);
   });
 });

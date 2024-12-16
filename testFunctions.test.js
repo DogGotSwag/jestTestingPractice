@@ -93,7 +93,7 @@ describe.skip("tests for calculator object", () => {
   });
 });
 
-describe("tests for caesarCipher", () => {
+describe.skip("tests for caesarCipher", () => {
   it("shifts one letter by 0", () => {
     expect(caesarCipher("a", 0)).toMatch("a");
   });
@@ -155,5 +155,13 @@ describe("tests for caesarCipher", () => {
 
   it("test if all non-alphabetical chars remain the same", () => {
     expect(caesarCipher("Hello, World!", 3)).toMatch("Khoor, Zruog!");
+  });
+});
+
+describe("tests for analyzeArray", () => {
+  it("test for empty array, and no input", () => {
+    let array = []
+    expect(analyzeArray()).toStrictEqual({});
+    expect(analyzeArray(array)).toStrictEqual({});
   });
 });

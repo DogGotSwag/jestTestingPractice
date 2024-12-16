@@ -203,9 +203,24 @@ describe("tests for analyzeArray", () => {
   it("find length random number 200-1000", () => {
     let randomNumber = Math.floor(Math.random() * (1000 - 200) + 200);
     let arr = [];
-    for(let i = 0; i < randomNumber; i++){
+    for (let i = 0; i < randomNumber; i++) {
       arr.push(i);
     }
     expect(analyzeArray(arr)["length"]).toBe(arr.length);
+  });
+
+  it("find the average", () => {
+    let array = [1, 1, 1, 1, 1];
+    expect(analyzeArray(array)['average']).toBe(1);
+  });
+
+  it("find the average", () => {
+    let array = [123, 658];
+    expect(analyzeArray(array)['average']).toBeCloseTo(390.5);
+  });
+
+  it("find the average", () => {
+    let array = [363, 33, 73, 21, 63, 99];
+    expect(analyzeArray(array)['average']).toBeCloseTo(108.67);
   });
 });

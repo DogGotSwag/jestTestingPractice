@@ -71,12 +71,16 @@ function analyzeArray( arr = []) {
     min: arr[0],
     max: arr[0],
     length: arr.length,
+    average: 0,
   };
-
+  let sum  = arr[0]
   for( let i = 1; i < arr.length; i++){
     if(arr[i] < obj.min) obj.min = arr[i];
     if(arr[i] > obj.max) obj.max = arr[i];
+    sum += arr[i];
   }
+
+  obj.average = sum / arr.length;
 
   return obj;
 }

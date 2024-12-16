@@ -189,4 +189,23 @@ describe("tests for analyzeArray", () => {
     let array = [99, 1000, 3, 67];
     expect(analyzeArray(array)["max"]).toBe(1000);
   });
+
+  it("find length", () => {
+    let array = [99, 1000, 3, 67];
+    expect(analyzeArray(array)["length"]).toBe(4);
+  });
+
+  it("find length", () => {
+    let array = [1, 2, 4, 5, 6, 7, 8, 9];
+    expect(analyzeArray(array)["length"]).toBe(8);
+  });
+
+  it("find length random number 200-1000", () => {
+    let randomNumber = Math.floor(Math.random() * (1000 - 200) + 200);
+    let arr = [];
+    for(let i = 0; i < randomNumber; i++){
+      arr.push(i);
+    }
+    expect(analyzeArray(arr)["length"]).toBe(arr.length);
+  });
 });

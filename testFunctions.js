@@ -63,7 +63,12 @@ function caesarCipher(string, key) {
   return word;
 }
 
-console.log(caesarCipher("Hello, World!", 3));
 
-function analyzeArray() {}
+function analyzeArray( arr = []) {
+  if(arr.length === 0){
+    return {};
+  }
+  let obj = {};
+}
+
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

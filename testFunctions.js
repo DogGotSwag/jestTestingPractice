@@ -65,10 +65,18 @@ function caesarCipher(string, key) {
 
 
 function analyzeArray( arr = []) {
-  if(arr.length === 0){
-    return {};
-  }
-  let obj = {};
-}
+  if(arr.length === 0) return {};
+  
+  let obj = {
+    min: arr[0],
+    max: arr[0]
+  };
 
+  for( let i = 1; i < arr.length; i++){
+    if(arr[i] < obj.min) obj.min = arr[i];
+    if(arr[i] > obj.max) obj.max = arr[i];
+  }
+
+  return obj;
+}
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };

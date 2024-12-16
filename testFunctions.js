@@ -69,7 +69,8 @@ function analyzeArray( arr = []) {
   
   let obj = {
     min: arr[0],
-    max: arr[0]
+    max: arr[0],
+    length: arr.length,
   };
 
   for( let i = 1; i < arr.length; i++){

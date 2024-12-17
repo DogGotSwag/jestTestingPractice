@@ -6,7 +6,7 @@ import {
   analyzeArray,
 } from "./testFunctions";
 
-describe.skip("check if all functions created", () => {
+describe("check if all functions created", () => {
   let list = [capitalize, reverseString, caesarCipher, analyzeArray];
   for (let i = 0; i < list.length; i++) {
     it(`${list[i].name} ${typeof list[i]} defined`, () => {
@@ -19,7 +19,7 @@ describe.skip("check if all functions created", () => {
   });
 });
 
-describe.skip("tests for capitalize function", () => {
+describe("tests for capitalize function", () => {
   it(`takes 'a' returns 'A'`, () => {
     expect(capitalize("a")).toBe("A");
   });
@@ -41,7 +41,7 @@ describe.skip("tests for capitalize function", () => {
   });
 });
 
-describe.skip("tests for reverseString function", () => {
+describe("tests for reverseString function", () => {
   it(`takes 'one' returns 'eno'`, () => {
     expect(reverseString("one")).toBe("eno");
   });
@@ -59,7 +59,7 @@ describe.skip("tests for reverseString function", () => {
   });
 });
 
-describe.skip("tests for calculator object", () => {
+describe("tests for calculator object", () => {
   it(`adds 400 + 20`, () => {
     expect(calculator.add(400, 20)).toBe(420);
   });
@@ -93,7 +93,7 @@ describe.skip("tests for calculator object", () => {
   });
 });
 
-describe.skip("tests for caesarCipher", () => {
+describe("tests for caesarCipher", () => {
   it("shifts one letter by 0", () => {
     expect(caesarCipher("a", 0)).toMatch("a");
   });

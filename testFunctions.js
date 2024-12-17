@@ -51,13 +51,15 @@ function caesarCipher(string, key) {
   for (let i = 0; i < string.length; i++) {
     let isUpper = isUpperCase(string[i]);
     let currentIndex = alphabet.indexOf(string[i].toLowerCase());
+    const LENGTH_OF_ALPHABET = 26;
+    
     if (currentIndex === -1) {
       word += string[i];
       continue;
     }
-    let newIndex = currentIndex + (key % 26);
-    if (newIndex > 25) newIndex -= 26;
-    if (newIndex < 0) newIndex += 26;
+    let newIndex = currentIndex + (key % LENGTH_OF_ALPHABET);
+    if (newIndex > 25) newIndex -= LENGTH_OF_ALPHABET;
+    if (newIndex < 0) newIndex += LENGTH_OF_ALPHABET;
     word += isUpper ? alphabet[newIndex].toUpperCase() : alphabet[newIndex];
   }
   return word;
